@@ -26,7 +26,10 @@ const Task = ({ tasks, onToggleComplete, onRemoveTask }) => {
               </span>
             </div>
             <div className="items_right">
-              <p className="task_date">{currentDate.toString().slice(0, 16)}</p>
+              <span className="task_priority">{task.priority} Priority</span>
+              <span className="task_date">
+                {currentDate.toString().slice(0, 16)}
+              </span>
               <button className="btn" onClick={() => onRemoveTask(task.id)}>
                 Remove
               </button>

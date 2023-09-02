@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
 import TaskList from "./components/TaskList";
-import Header from "./Header";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Navbar />
       <TaskList />
     </div>
   );

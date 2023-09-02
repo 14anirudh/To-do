@@ -1,19 +1,10 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 95vw;
-  height: 10vh;
-  color: black;
-  font-size: calc(10px + 2vmin);
-  margin-bottom: 20px;
-  border-bottom: 2px solid gray;
+.navbar{
+  text-align: center;
 }
 
 .btn {
@@ -102,4 +93,8 @@ select {
   margin: 5px;
   padding: 5px;
   font-size: 20px;
+}
+.task_priority{
+  text-align:left;
+  margin: 2px;
 }

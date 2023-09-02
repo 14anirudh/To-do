@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Task from "./Task";
 
-const TaskList = ({}) => {
+const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [taskText, setTaskText] = useState("");
-  const [taskPriority, setTaskPriority] = useState("low");
+  const [taskPriority, setTaskPriority] = useState("Low");
+
+  useEffect(() => {
+    console.log("TaskList component updated");
+  }, [tasks]);
 
   const handleToggleComplete = (taskId) => {
     setTasks((prevTasks) =>
@@ -32,7 +36,7 @@ const TaskList = ({}) => {
 
     setTasks([...tasks, newTask]);
     setTaskText("");
-    setTaskPriority("low");
+    setTaskPriority("Low");
   };
 
   return (
@@ -54,9 +58,9 @@ const TaskList = ({}) => {
                 value={taskPriority}
                 onChange={(e) => setTaskPriority(e.target.value)}
               >
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
               </select>
             </label>
             <button type="submit" className="btn">
