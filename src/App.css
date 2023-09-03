@@ -1,10 +1,46 @@
 .App {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  margin-left: 220px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.navbar{
-  text-align: center;
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid gray;
+  background-color: #feefc3;
+  font-weight: 500;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar li {
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #202132;
+  font-size: 20px;
+}
+.link {
+  text-decoration: none;
+  color: #202132;
+  padding: 0;
+  margin: 0;
+}
+.link_div {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
 }
 
 .btn {
@@ -27,14 +63,14 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 98vw;
+  width: 80vw;
   height: 12vh;
   /* border-bottom: 2px solid gray; */
   box-shadow: 3px gray;
   border-radius: 10px;
 }
 .input_note {
-  width: 60vw;
+  width: 40vw;
   height: 5vh;
   border-radius: 10px;
   margin: 5px;
@@ -63,9 +99,8 @@ select {
   list-style: none;
 }
 .task_items {
-  border: 2px solid gray;
-  margin: 10px;
-  width: 95vw;
+  margin: 10px 10px 0px 0px;
+  width: 79vw;
   height: 20%;
   border-radius: 10px;
   display: flex;
@@ -89,12 +124,7 @@ select {
   flex-direction: column;
   justify-content: space-around;
 }
-.inside_btn {
-  margin: 5px;
-  padding: 5px;
-  font-size: 20px;
-}
-.task_priority{
-  text-align:left;
+.task_priority {
+  text-align: left;
   margin: 2px;
 }

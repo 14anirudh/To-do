@@ -38,6 +38,7 @@ const TaskList = () => {
     setTaskText("");
     setTaskPriority("Low");
   };
+  // const highPriorityTasks = tasks.filter((task) => task.priority === "high");
 
   return (
     <div>

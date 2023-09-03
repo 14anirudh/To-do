@@ -1,12 +1,21 @@
 import "./App.css";
 import TaskList from "./components/TaskList";
 import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
+import About from "./components/About";
+import Home from "./components/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <TaskList />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tasks" element={<TaskList />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
