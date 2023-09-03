@@ -15,19 +15,19 @@ Welcome to the To-Do List App! This React-based application efficiently manages 
 
 ## Usage
 
-## Completion of Tasks
+## TaskList and Updation Of tasks
 
-In the To-Do List App, you can easily mark tasks as completed or incomplete using the provided checkboxes next to each task. Here's how it works:
+In the To Do List App you can easily indicate whether tasks are done or not by using the provided checkboxes to each task. Here's how it works;
 
-=> When you have a list of tasks displayed in the `TaskList` component, you'll notice a checkbox next to each task item.
+=> When you see a list of tasks, in the TaskList component you will notice a checkbox beside each task item.
 
-=> To mark a task as completed, simply click the checkbox corresponding to that task. When the checkbox is checked, the task will be considered as completed.
+=> To mark a task as complete simply click on the checkbox corresponding to that task. When the checkbox is checked it means the task is considered completed.
 
-=> To mark a completed task as incomplete, click the checkbox again to uncheck it. This action will revert the task's completion status to incomplete.
+=> If you want to change a completed task to incomplete just click on the checkbox again to uncheck it. This action will restore the tasks completion status as incomplete.
 
-=> Completed tasks are visually distinguished from incomplete tasks with a strike-through effect applied to the task text. This styling provides a clear visual indicator of the task's completion status.
+=> Completed tasks are visually differentiated from ones by applying an effect to their text. This formatting serves as a cue, for identifying completed tasks.
 
-=> The completion status of tasks is dynamically updated and stored using React state, ensuring that your changes persist even when you navigate between pages or reload the application.
+=> The status of tasks being complete or incomplete is dynamically. Saved using React state. This ensures that your changes persist when you switch between pages or refresh the application.
 
 ---
 
