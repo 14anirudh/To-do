@@ -7,13 +7,14 @@ const TaskList = () => {
   const [taskPriority, setTaskPriority] = useState("Low");
 
   useEffect(() => {
-    console.log("TaskList component updated");
-  }, [tasks]);
-
-  const length = tasks.length;
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (storedTasks) {
+      setTasks(storedTasks);
+    }
+  }, []);
   useEffect(() => {
-    document.title = `You have ${length} tasks`;
-  }, [length]);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleToggleComplete = (taskId) => {
     setTasks((prevTasks) =>
@@ -27,11 +28,8 @@ const TaskList = () => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
-  // Handle form submission to add a new task
   const addTask = (e) => {
     e.preventDefault();
-
-    //task object
     const newTask = {
       id: tasks.length + 1,
       text: taskText,
@@ -43,7 +41,6 @@ const TaskList = () => {
     setTaskText("");
     setTaskPriority("Low");
   };
-  // const highPriorityTasks = tasks.filter((task) => task.priority === "high");
 
   return (
     <div>

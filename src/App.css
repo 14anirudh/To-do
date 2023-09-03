@@ -100,7 +100,6 @@ select {
   align-items: center;
   justify-content: center;
   margin-left: 10px;
-  width: 30%;
 }
 .tasks_list_full {
   list-style: none;

@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# To-Do List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Usage](#usage)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Welcome to the To-Do List App! This React-based application efficiently manages tasks. Users can add, update, and remove tasks, set their priority, and track completion status. Additionally, React Router enables navigation, including an about page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Completion of Tasks
 
-### `npm run build`
+In the To-Do List App, you can easily mark tasks as completed or incomplete using the provided checkboxes next to each task. Here's how it works:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+=> When you have a list of tasks displayed in the `TaskList` component, you'll notice a checkbox next to each task item.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+=> To mark a task as completed, simply click the checkbox corresponding to that task. When the checkbox is checked, the task will be considered as completed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+=> To mark a completed task as incomplete, click the checkbox again to uncheck it. This action will revert the task's completion status to incomplete.
 
-### `npm run eject`
+=> Completed tasks are visually distinguished from incomplete tasks with a strike-through effect applied to the task text. This styling provides a clear visual indicator of the task's completion status.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+=> The completion status of tasks is dynamically updated and stored using React state, ensuring that your changes persist even when you navigate between pages or reload the application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Prioritization of Tasks
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+=> High Priority tasks are marked with red,Medium Priority tasks with yellow,and Low Priority with Green for distinguation
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Now you can efficiently manage your tasks and keep track of their completion status with ease!
