@@ -17,6 +17,16 @@
   background-color: #feefc3;
   font-weight: 500;
 }
+@media (max-width: 450px) {
+  .navbar {
+    top: 0;
+    height: 100vh;
+    width: 80px;
+  }
+  .App{
+    margin-left: 90px;
+  }
+}
 .navbar ul {
   list-style: none;
   margin: 0;

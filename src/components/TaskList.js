@@ -10,6 +10,11 @@ const TaskList = () => {
     console.log("TaskList component updated");
   }, [tasks]);
 
+  const length = tasks.length;
+  useEffect(() => {
+    document.title = `You have ${length} tasks`;
+  }, [length]);
+
   const handleToggleComplete = (taskId) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
