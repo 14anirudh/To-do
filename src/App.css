@@ -5,6 +5,7 @@
   margin-left: 220px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+/*NAVBAR*/
 .navbar {
   position: fixed;
   left: 0;
@@ -13,20 +14,11 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  border: 2px solid gray;
+  border-right: 2px solid gray;
   background-color: #feefc3;
   font-weight: 500;
 }
-@media (max-width: 450px) {
-  .navbar {
-    top: 0;
-    height: 100vh;
-    width: 80px;
-  }
-  .App{
-    margin-left: 90px;
-  }
-}
+
 .navbar ul {
   list-style: none;
   margin: 0;
@@ -52,7 +44,7 @@
   align-items: baseline;
   justify-content: center;
 }
-
+/*BUTTONS */
 .btn {
   width: 10vw;
   height: 5vh;
@@ -69,6 +61,11 @@
   background-color: gray;
   color: white;
 }
+.btn:focus {
+  outline: none;
+}
+
+/*TASKS*/
 .container {
   display: flex;
   align-items: center;
@@ -119,12 +116,24 @@ select {
   padding: 10px;
   box-shadow: 3px 3px 3px 3px gray;
 }
+.bg_high {
+  border-radius: 5px 5px 5px 5px;
+  background-color: #f00f30f2;
+}
+.bg_med {
+  border-radius: 5px 5px 5px 5px;
+  background-color: #ddaa27;
+}
+.bg_low {
+  border-radius: 5px 5px 5px 5px;
+  background-color: #1fac61;
+}
 .completed_tasklist_items {
-  color: blue;
+  color: rgb(64, 64, 190);
   text-decoration: none;
 }
 .incomplete_tasklist_items {
-  color: red;
+  color: #1256ea;
   text-decoration: line-through;
 }
 
@@ -137,4 +146,30 @@ select {
 .task_priority {
   text-align: left;
   margin: 2px;
+}
+/* MEDIA QUERIES*/
+@media (max-width: 450px) {
+  .navbar {
+    top: 0;
+    height: 100vh;
+    width: 80px;
+  }
+  .App {
+    margin-left: 90px;
+  }
+  .items_right {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 10px;
+  }
+  .btn {
+    width: auto;
+    padding: 5px;
+    height: 5.5vh;
+  }
+  .task_items {
+    width: 75vw;
+  }
 }
