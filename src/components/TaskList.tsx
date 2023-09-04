@@ -13,6 +13,7 @@ const TaskList: React.FC = () => {
   const [taskText, setTaskText] = useState<string>("");
   const [taskPriority, setTaskPriority] = useState<string>("Low");
 
+  //  to get tasks from local storage
   useEffect(() => {
     const storedTasks = JSON.parse(
       localStorage.getItem("tasks") || "[]"
@@ -22,26 +23,18 @@ const TaskList: React.FC = () => {
     }
   }, []);
 
+  //  to set tasks in local storage
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    console.log("TaskList component updated");
   }, [tasks]);
 
+  //  to set title of the page as no of tasks
   useEffect(() => {
     document.title = `You have ${tasks.length} tasks`;
   });
 
-  const handleToggleComplete = (taskId: number) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === taskId ? { ...task, isComplete: !task.isComplete } : task
-      )
-    );
-  };
-
-  const handleRemoveTask = (taskId: number) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
-  };
-
+  //  function to add task
   const addTask = (e: React.FormEvent) => {
     e.preventDefault();
     const newTask: TaskItem = {
@@ -56,8 +49,23 @@ const TaskList: React.FC = () => {
     setTaskPriority("Low");
   };
 
+  //  function to toggle complete task
+  const handleToggleComplete = (taskId: number) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, isComplete: !task.isComplete } : task
+      )
+    );
+  };
+
+  //  function to remove task
+  const handleRemoveTask = (taskId: number) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+  };
+
   return (
     <div>
+      {/* form to add task */}
       <div className="container">
         <form onSubmit={addTask} className="tasks_form">
           <input
@@ -86,6 +94,8 @@ const TaskList: React.FC = () => {
           </div>
         </form>
       </div>
+
+      {/* all tasks rendered through task component */}
       <div>
         <Task
           tasks={tasks}

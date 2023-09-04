@@ -19,7 +19,8 @@ const About = () => {
       <h2>Developer </h2>
       <p>
         This application is developed by Anirudh Gautam. You can find more of
-        his work on his website. <Link to ="https://anirudh.vercel.app/">click here</Link>
+        his work on his website.{" "}
+        <Link to="https://anirudh.vercel.app/">click here</Link>
       </p>
     </div>
   );

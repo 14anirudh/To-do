@@ -1,5 +1,6 @@
 import React from "react";
 
+//  interface for TaskItem
 interface TaskItem {
   id: number;
   text: string;
@@ -7,6 +8,7 @@ interface TaskItem {
   isComplete: boolean;
 }
 
+// interface for props of Task component
 interface TaskProps {
   tasks: TaskItem[];
   onToggleComplete: (taskId: number) => void;
@@ -24,12 +26,13 @@ const Task: React.FC<TaskProps> = ({
     <div>
       <div className="tasks_list_full">
         {tasks.length === 0 ? (
-          <h2>
-            No Tasks.You can add a task by adding description through input
-            field, selecting priority and then click on the add task button
-          </h2>
+          <h4>
+            No Tasks as of now.You can add a task by adding description through
+            input field, selecting priority and then click on the add task
+            button
+          </h4>
         ) : (
-          tasks.map((task) => (
+          tasks.map((task: TaskItem) => (
             <div key={task.id} className="task_items">
               <div>
                 <input
