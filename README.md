@@ -10,6 +10,7 @@
 ## Introduction
 
 Welcome to the To-Do List App! This React-based application efficiently manages tasks. Users can add, update, and remove tasks, set their priority, and track completion status. Additionally, React Router enables navigation, including an about page.
+TechStack:Reactjs,JavaScript,TypeScript,HTML,CSS
 
 ---
 

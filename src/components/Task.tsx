@@ -1,8 +1,24 @@
 import React from "react";
 
-const Task = ({ tasks, onToggleComplete, onRemoveTask }) => {
+interface TaskItem {
+  id: number;
+  text: string;
+  priority: string;
+  isComplete: boolean;
+}
+
+interface TaskProps {
+  tasks: TaskItem[];
+  onToggleComplete: (taskId: number) => void;
+  onRemoveTask: (taskId: number) => void;
+}
+
+const Task: React.FC<TaskProps> = ({
+  tasks,
+  onToggleComplete,
+  onRemoveTask,
+}) => {
   const currentDate = new Date();
-  // console.log(currentDate);
 
   return (
     <div>
@@ -10,7 +26,7 @@ const Task = ({ tasks, onToggleComplete, onRemoveTask }) => {
         {tasks.length === 0 ? (
           <h2>
             No Tasks.You can add a task by adding description through input
-            field ,selecting priority and then click on add task button
+            field, selecting priority and then click on the add task button
           </h2>
         ) : (
           tasks.map((task) => (

@@ -1,22 +1,36 @@
 import React, { useState, useEffect } from "react";
 import Task from "./Task";
 
-const TaskList = () => {
-  const [tasks, setTasks] = useState([]);
-  const [taskText, setTaskText] = useState("");
-  const [taskPriority, setTaskPriority] = useState("Low");
+interface TaskItem {
+  id: number;
+  text: string;
+  priority: string;
+  isComplete: boolean;
+}
+
+const TaskList: React.FC = () => {
+  const [tasks, setTasks] = useState<TaskItem[]>([]);
+  const [taskText, setTaskText] = useState<string>("");
+  const [taskPriority, setTaskPriority] = useState<string>("Low");
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    const storedTasks = JSON.parse(
+      localStorage.getItem("tasks") || "[]"
+    ) as TaskItem[];
     if (storedTasks) {
       setTasks(storedTasks);
     }
   }, []);
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  const handleToggleComplete = (taskId) => {
+  useEffect(() => {
+    document.title = `You have ${tasks.length} tasks`;
+  });
+
+  const handleToggleComplete = (taskId: number) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.id === taskId ? { ...task, isComplete: !task.isComplete } : task
@@ -24,13 +38,13 @@ const TaskList = () => {
     );
   };
 
-  const handleRemoveTask = (taskId) => {
+  const handleRemoveTask = (taskId: number) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
-  const addTask = (e) => {
+  const addTask = (e: React.FormEvent) => {
     e.preventDefault();
-    const newTask = {
+    const newTask: TaskItem = {
       id: tasks.length + 1,
       text: taskText,
       priority: taskPriority,
